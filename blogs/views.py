@@ -20,4 +20,10 @@ def home_page(request):
     return render(request, 'blogs/home_page.html', context=context)
 
 class PostDetailView(generic.DetailView):
-	model = Post
+    model = Post
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["categories"] = Category.objects.all()
+        return context
+    
