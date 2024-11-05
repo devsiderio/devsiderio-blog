@@ -19,7 +19,6 @@ def home_page(request):
 
     context = {
         'post_list': posts,
-        'categories': categories,
         'featured': featured
     }
 
@@ -30,12 +29,6 @@ class PostDetailView(generic.DetailView):
     queryset = Post.objects.filter(
         pub_date__lte=timezone.now()
     )
-    
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["categories"] = Category.objects.all()
-        return context
-    
 
 class FeaturedListView(generic.ListView):
     model = Post
@@ -46,11 +39,6 @@ class FeaturedListView(generic.ListView):
             pub_date__lte=timezone.now()
         )
         return query
-    
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["categories"] = Category.objects.all()
-        return context
     
 class CategoryListView(generic.ListView):
     model = Post
@@ -63,11 +51,6 @@ class CategoryListView(generic.ListView):
             pub_date__lte=timezone.now()
         )
         return post_list
-    
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["categories"] = Category.objects.all()
-        return context
     
 class SearchResultsView(generic.ListView):
     model = Post
@@ -82,8 +65,8 @@ class SearchResultsView(generic.ListView):
         ).distinct()
         return post_list
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['categories'] = Category.objects.all()
-        return context
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['categories'] = Category.objects.all()
+    #     return context
     
