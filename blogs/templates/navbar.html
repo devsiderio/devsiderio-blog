@@ -60,6 +60,21 @@
         />
         <button class="btn btn-outline-success" type="submit">Buscar</button>
       </form>
+      {% if user.is_authenticated %}
+      <form action="{% url 'logout' %}" method="post" style="display: inline">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-outline-primary ms-2">
+          Sign Out
+        </button>
+      </form>
+      {% else %}
+      <a
+        class="btn btn-outline-primary ms-2"
+        href="{% url 'login' %}"
+        role="button"
+        >Sign In</a
+      >
+      {% endif %}
     </div>
   </div>
 </nav>
