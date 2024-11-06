@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block content %}
 <div class="container-xxl bd-gutter mt-3 my-md-4 bd-layout">
   <main class="container">
     <div class="row g-5">
@@ -9,7 +9,7 @@
           <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
             <h1 class="h3 mb-3 fw-normal">Ingrese sus datos</h1>
-            {{ form }}
+            {{ form|crispy }}
             <button class="w-100 btn btn-lg btn-primary mt-4" type="submit">
               Sign in
             </button>
