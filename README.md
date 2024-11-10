@@ -3,7 +3,8 @@ Este proyecto consiste en una aplicación básica de un blog, basada en el [tuto
 
 ## Cómo correr este proyecto
 
-Descargar este repositorio (se puede hacer desde la terminal ubicandose en la carpeta deseada y escribiendo `git clone https://github.com/devsiderio/devsiderio-blog`)
+Descargar este repositorio. Se puede hacer desde la terminal ubicandose en la carpeta deseada y escribiendo:
+- `git clone https://github.com/devsiderio/devsiderio-blog`
 
 Luego, en sistemas operativos basados en Debian/Ubuntu, ejecutar los siguientes comandos para instalar pip y pipenv:
   
@@ -19,11 +20,12 @@ Ejecutar los siguientes comandos:
 - `pipenv install django`
 - `pipenv install markdown pillow django-crispy-forms crispy-bootstrap5`
 - `python3 manage.py createsuperuser`
+(A la hora de crear un superuser puede ser, por ejemplo, usuario: admin, contraseña: 1234)
 - `python3 manage.py makemigrations`
 - `python3 manage.py migrate`
 - `python3 manage.py runserver`
 
-(A la hora de crear un superuser puede ser, por ejemplo, usuario: admin, contraseña: 1234)
+
 
 Para publicar nuevos posts y administrar el sitio en general, acceder desde http://127.0.0.1:8000/admin/ con las credenciales de administrador (admin, 1234).
 
