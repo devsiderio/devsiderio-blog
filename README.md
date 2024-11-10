@@ -1,5 +1,5 @@
 # devsiderio-blog
-Este proyecto consiste en una aplicación básica de un blog, basada en el [tutorial de CodeSwallow](https://www.youtube.com/playlist?list=PLGUsAPwPODljydJyw2ptMwoPdbpVzyjQe), cuyo repositorio es [este](https://github.com/CodeSwallow/django-blog). Con el mismo se pueden probar y practicar muchas cuestiones básicas de un proyecto de este tipo con Django.
+Este proyecto consiste en una aplicación de blog, con múltiples funciones fundamentales, basada en el [tutorial](https://www.youtube.com/playlist?list=PLGUsAPwPODljydJyw2ptMwoPdbpVzyjQe) de [CodeSwallow](https://github.com/CodeSwallow/django-blog). Con este proyecto se puede practicar y aprender varias cuestiones básicas de un proyecto de este tipo con Django.
 
 ## Cómo correr este proyecto
 
