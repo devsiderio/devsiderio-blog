@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg" style="background-color: #001f3f">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/"
+    <a class="navbar-brand text-light" href="/"
       >dev<span class="text-danger">siderio</span></a
     >
     <button
@@ -17,14 +17,18 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+          <a class="nav-link active text-light" aria-current="page" href="/"
+            >Inicio</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'blogs:featured' %}">Destacados</a>
+          <a class="nav-link text-light" href="{% url 'blogs:featured' %}"
+            >Destacados</a
+          >
         </li>
         <li class="nav-item dropdown">
           <a
-            class="nav-link dropdown-toggle"
+            class="nav-link dropdown-toggle text-light"
             href="#"
             role="button"
             data-bs-toggle="dropdown"
@@ -36,7 +40,7 @@
             {% for category in categories %}
             <li>
               <a
-                class="dropdown-item"
+                class="dropdown-item text-dark"
                 href="{% url 'blogs:category' category.slug %}"
                 >{{ category.title }}</a
               >
@@ -58,18 +62,18 @@
           placeholder="Buscar"
           aria-label="Search"
         />
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
+        <button class="btn btn-outline-light" type="submit">Buscar</button>
       </form>
       {% if user.is_authenticated %}
       <form action="{% url 'logout' %}" method="post" style="display: inline">
         {% csrf_token %}
-        <button type="submit" class="btn btn-outline-primary ms-2">
+        <button type="submit" class="btn btn-outline-light ms-2">
           Sign Out
         </button>
       </form>
       {% else %}
       <a
-        class="btn btn-outline-primary ms-2"
+        class="btn btn-outline-light ms-2"
         href="{% url 'login' %}"
         role="button"
         >Sign In</a

@@ -1,36 +1,53 @@
 {% extends 'base.html' %} {% block content %}
-<div class="container-xxl bd-gutter mt-3 my-md-4 bd-layout">
+<div class="container-xxl bd-gutter mt-3 my-md-4 bd-layout bg-dark text-light">
   <main class="container">
     <div class="row g-5">
       <div class="col-md-8">
-        <h3 class="pb-4 mb-4 fst-italic border-bottom">Destacados</h3>
+        <h3 class="pb-4 mb-4 fst-italic border-bottom text-light">
+          Destacados
+        </h3>
         {% for post in post_list %}
-        <div class="card mb-3">
-          {% if post.image %}
-          <img
-            src="{{ post.image.url }}"
-            class="card-img-top"
-            alt="thumbnail"
-          />
-          {% endif %}
-          <div class="card-body">
-            <h5 class="card-title">{{ post.title }}</h5>
-            <p class="card-text">{{ post.overview }}</p>
-            <p class="card-text">
-              <small class="text-muted"
-                >Last updated {{ post.pub_date.date }}</small
-              >
-            </p>
-          </div>
+        <div
+          class="card mb-3"
+          style="background-color: #001f3f; color: #ffffff"
+        >
+          <a
+            href="{{ post.get_absolute_url }}"
+            style="text-decoration: none; color: inherit"
+          >
+            {% if post.image %}
+            <img
+              src="{{ post.image.url }}"
+              class="card-img-top"
+              alt="thumbnail"
+            />
+            {% endif %}
+            <div class="card-body">
+              <h5 class="card-title">{{ post.title }}</h5>
+              <p class="card-text">{{ post.overview }}</p>
+              <p class="card-text">
+                <small class="text-light"
+                  >Actualizado al {{ post.pub_date.date }}</small
+                >
+              </p>
+            </div>
+          </a>
         </div>
         {% endfor %}
       </div>
 
       <div class="col-md-4">
         <div class="position-sticky" style="top: 2rem">
-          <div class="p-4 mb-3 bg-light rounded">
-            <h4 class="fst-italic">Encontrados:</h4>
-            <p class="mb-0">{{ page_obj.paginator.count }}</p>
+          <div
+            class="p-4 mb-3"
+            style="
+              background-color: #001f3f;
+              border: 2px solid white;
+              border-radius: 0.5rem;
+            "
+          >
+            <h4 class="fst-italic text-light">Encontrados:</h4>
+            <p class="mb-0 text-light">{{ page_obj.paginator.count }}</p>
           </div>
         </div>
       </div>
@@ -39,7 +56,7 @@
     <nav class="blog-pagination" aria-label="Pagination">
       {% if page_obj.has_previous %}
       <a
-        class="btn btn-outline-primary rounded-pill"
+        class="btn btn-outline-light rounded-pill"
         href="?page={{ page_obj.previous_page_number }}{% if query %}&search={{ query }}{% endif %}"
         >Anterior</a
       >
@@ -47,7 +64,7 @@
       <a class="btn btn-outline-secondary rounded-pill disabled">Anterior</a>
       {% endif %} {% if page_obj.has_next %}
       <a
-        class="btn btn-outline-primary rounded-pill"
+        class="btn btn-outline-light rounded-pill"
         href="?page={{ page_obj.next_page_number }}{% if query %}&search={{ query }}{% endif %}"
         >Siguiente</a
       >

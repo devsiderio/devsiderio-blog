@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-<div class="container-xxl bd-gutter mt-3 my-md-4 bd-layout">
+<div class="container-xxl bd-gutter mt-3 my-md-4 bd-layout bg-dark text-light">
   <main class="container">
     <div class="row g-5">
       <div class="col-md-3"></div>
@@ -7,10 +7,7 @@
       <div class="col-md-6">
         <div class="w-100 m-auto text-center">
           <h1>Registro exitoso!</h1>
-          <a
-            class="btn btn-outline-primary mb-5"
-            href="{% url 'login' %}"
-            role="button"
+          <a class="btn btn-primary mb-5" href="{% url 'login' %}" role="button"
             >Sign In</a
           >
         </div>
