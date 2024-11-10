@@ -6,8 +6,8 @@ Este proyecto consiste en una aplicación básica de un blog, basada en el [tuto
 
 - Luego, en sistemas operativos basados en Debian/Ubuntu, ejecutar los siguientes comandos para instalar pip y pipenv:
   
-``sudo apt install python3-pip
-pip install pipenv``
+``sudo apt install python3-pip``
+```pip install pipenv```
 
 - Posicionarse desde la terminal sobre la carpeta del proyecto.
 
