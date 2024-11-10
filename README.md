@@ -6,21 +6,21 @@ Este proyecto consiste en una aplicación básica de un blog, basada en el [tuto
 
 - Luego, en sistemas operativos basados en Debian/Ubuntu, ejecutar los siguientes comandos para instalar pip y pipenv:
   
-``sudo apt install python3-pip``
-```pip install pipenv```
+- `sudo apt install python3-pip`
+- `pip install pipenv`
 
 - Posicionarse desde la terminal sobre la carpeta del proyecto.
 
 - Ejecutar los siguientes comandos:
   
-``pipenv install
-pipenv shell
-pipenv install django
-pipenv install markdown pillow django-crispy-forms crispy-bootstrap5
-python3 manage.py createsuperuser
-python3 manage.py makemigrations
-python3 manage.py migrate
-python3 manage.py runserver``
+- `pipenv install`
+- `pipenv shell`
+- `pipenv install django`
+- `pipenv install markdown pillow django-crispy-forms crispy-bootstrap5`
+- `python3 manage.py createsuperuser`
+- `python3 manage.py makemigrations`
+- `python3 manage.py migrate`
+- `python3 manage.py runserver`
 
 (A la hora de crear un superuser puede ser, por ejemplo, usuario: admin, contraseña: 1234)
 
@@ -28,6 +28,6 @@ python3 manage.py runserver``
 
 - Al hacer cambios en la base de datos, bajar el servidor (Ctrl+C) y volver a correr:
 
-``python3 manage.py makemigrations
-python3 manage.py migrate
-python3 manage.py runserver``
+- `python3 manage.py makemigrations`
+- `python3 manage.py migrate`
+- `python3 manage.py runserver`
